@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html> 
+<head> 
+	<title>Road to Iron Scot</title>
+	<link href = "css/maclete.css" type = "text/css" rel = "stylesheet">
+	<link href = "css/loginStyle.css" type = "text/css" rel = "stylesheet">
+	
+	<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+	<script src="scripts/login.js"></script>
+	
+</head> 
+
+<body background = "images/background.jpg" >
+<div id = 'bigWrapper'>
+
+<div>
+	<img id = "homeOfScots" src="images/homeOfScot3.png" >
+</div>
+
+<div class="orangeBanner">
+	<!--<a id = "signOut" href="#" class="button"></a>-->
+</div>
+  
+<div class="form_wrapper">
+	<div id = "messageBox"></div>
+	<form class = "login_form">		
+		<input type="text" id="user" placeholder="User name">
+		<input type="password" name="pass" placeholder="Password">
+		<input type="submit" name="login" class="login login-submit buttons" value="Submit">
+	</form>
+	
+	<form class = "registration_form">
+		<input type = "text" name = "email" placeholder = "Your Email Address">
+		<input type = "text" name = "new_user" placeholder = "Your User Name">
+		<input type = "text" name = "new_pass" placeholder = "Your New Password">
+		<input type = "text" name = "new_pass2" placeholder = "Repeat Your New Password">
+		<input type = "submit" name = "register" class = "register buttons" value = "Submit">
+	</form>
+	
+	<form class = "passwordReset_form">
+		<input type = "text" name = "email" placeholder = "Your Email Address">
+		<input type = "text" name = "new_pass" placeholder = "Your New Password">
+		<input type = "text" name = "new_pass2" placeholder = "Repeat Your New Password">
+		<input type = "submit" name = "passwordReset" class = "passwordReset buttons" value = "Submit">
+	</form>
+	<a id = "login"  style = "float:right">Log In</a><br>
+	<a id = "register" style = "float:right">New User</a><br>
+	<a id = "passwordReset" style = "float:right">Forgot Password</a>
+
+
+
+</div>
+
+
+ </body> 
+
+</html>

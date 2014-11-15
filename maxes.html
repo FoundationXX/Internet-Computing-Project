@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+
+<link href="css/maxes.css" type="text/css" rel="stylesheet">
+
+<link href="css/maclete.css" type="text/css" rel="stylesheet">
+<div>
+	<img id="homeOfScots" src="images/homeOfScot3.png">
+</div>
+<div class="orangeBanner">
+	<a href="maxes.html" class="Tabs" id="viewPage">Maxes</a> <a
+		href="pdf.html" class="Tabs">PDFs</a> <a id="signOut"
+		href="index.html" class="button">Sign Out</a>
+</div>
+</head>
+
+<body background="images/background.jpg">
+	<div class="contentArea">
+		<div class="Absolute-Center" id = "studentName">
+			<h1 class = "offWhite" id ="studentText" >STUDENT NAME</h1>
+			 <select id="dropdown">
+  				<option value="First Year">Full Activity</option>
+  				<option value="Sophmore">Lower body only</option>
+  				<option value="Junior">Upper body only</option>
+ 				<option value="Senior">No Activity</option>
+</select>
+	</div>	</div>
+	<div class="contentArea">
+		<div class="Absolute-Center">
+
+			<form class="informationEdit" style="display: none">
+
+				<table class = "table">
+					<thead>
+						<tr>
+							<th class="lables">Lift</th>
+							<th class="lables">Max</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: maxes">
+						<tr>
+							<td><input data-bind="value: lift" /></td>
+							<td><input data-bind="value: max" /></td>
+						</tr>
+					</tbody>
+				</table>
+				<button id="addNewMax2" id="done">Done</button>
+				<button id="addNewMax2" id="addNewMax" data-bind="click: addMax">Add
+					New Max</button>
+
+
+			</form>
+
+			<form class="information">
+
+				<table  class = "table" id="work">
+					<thead>
+						<tr>
+							<th class="lables" id = "lift">Lift</th>
+							<th class="lables">Max</th>
+						</tr>
+					</thead>
+					<tbody data-bind="foreach: maxes">
+						<tr>
+							<td><a data-bind="text: lift">id</a></td>
+							<td><a data-bind="text: max">sdf</a></td>
+						</tr>
+					</tbody>
+				</table>
+
+
+			</form>
+			<div style="clear: both"></div>
+		</div>
+		<button id="edit">Edit Max</button>
+	</div>
+	<script type="text/javascript" src="scripts/knockout-3.2.0.js"></script>
+	<script src="scripts/maxes.js"></script>
+</body>
+</html>
+

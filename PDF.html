@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+<title>Road to Iron Scot</title>
+<link href="css/maclete.css" type="text/css" rel="stylesheet">
+<!--<img style='width:100%;height:100%'  >-->
+<div>
+	<img id="homeOfScots" src="images/homeOfScot3.png">
+</div>
+<div class="orangeBanner">
+	<a href="maxes.html" class="Tabs">Maxes</a> <a href="pdf.html"
+		class="Tabs" id="viewPage">PDFs</a> <a id="signOut" href="index.html"
+		class="button">Sign Out</a>
+</head>
+
+<body background="images/background.jpg">
+	<h1 class="offWhite" style="margin-left: 3em">Files</h1>
+	<div style="margin-left: 6em">
+		<input type="file" id="file" name="file">
+		<button data-bind="click: addPDF">Upload File</button>
+	</div>
+	<table style="margin-left: 6em; margin-top: 1em">
+		<thead>
+			<tr>
+				<th class="offWhite">Date</th>
+				<th class="offWhite" style="padding-left: 1.3em">Title</th>
+			</tr>
+		</thead>
+		<tbody data-bind="foreach: pdfs">
+			<tr>
+				<td class="offWhite" class="tableSpacing" data-bind="text: date"></td>
+				<td><input class="tableSpacing" type="offWhite"
+					style="background-color: color:rgb(215, 212, 212background-color: color:rgb(215, 212, 212));"
+					data-bind="value: name"></td>
+				<td><a class="tableSpacing" style="color: #EC5024" href="#"
+					data-bind="click: $root.openFile">Open</a></td>
+				<td><a class="tableSpacing"
+					style="margin-left: 1em; color: #EC5024" href="#"
+					data-bind="click: $root.removeFile">Remove</a></td>
+
+			</tr>
+		</tbody>
+	</table>
+	<div style="margin-left: 3em; margin-top: .5em;"></div>
+
+	<script type="text/javascript" src="scripts/knockout-3.2.0.js"></script>
+	<script src="scripts/PDF.js"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+
+<title>Road to Iron Scot</title>
+<link href="css/maclete.css" type="text/css" rel="stylesheet">
+<!--<img style='width:100%;height:100%'  >-->
+<div>
+	<img id="homeOfScots" src="images/homeOfScot3.png">
+</div>
+<div class="orangeBanner">
+	<a href="maxes.html" class="Tabs">Maxes</a> <a href="pdf.html"
+		class="Tabs" id="viewPage">PDFs</a> <a id="signOut" href="index.html"
+		class="button">Sign Out</a>
+</head>
+
+<body background="images/background.jpg">
+	<div style="margin-left: 3em; margin-top: .5em;">
+		<h1 class="offWhite">PDF's</h1>
+
+		<table style="margin-left: 3em">
+			<thead>
+				<tr>
+					<th class="offWhite">Date</th>
+					<th class="offWhite">Title</th>
+				</tr>
+			</thead>
+			<tbody data-bind="foreach: pdfs">
+				<tr>
+					<td class="offWhite" align="center" data-bind="text: date"></td>
+					<td><a class="tableSpacing" style="color: #EC5024" href="#"
+						data-bind="text: name" data-bind="click: $root.openFile"></a></td>
+
+				</tr>
+			</tbody>
+		</table>
+
+	</div>
+
+	<script type="text/javascript" src="scripts/knockout-3.2.0.js"></script>
+	<script src="scripts/PDF.js"></script>
+</body>
+
+</html>
+
