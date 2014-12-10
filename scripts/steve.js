@@ -3,28 +3,36 @@
     var viewModel = function(){
         var self = this;
         self.people = ko.observableArray([
-            {firstName:'James',lastName:'Smith',sport:"Football",injury:'Full Activity'},
-            {firstName:'Susan',lastName:'Smith',sport:"Football",injury:'Upper Body Only'},
-            {firstName:'Jeremy',lastName:'Smith',sport:"Soccer",injury:'Full Activity'},
-            {firstName:'Megan',lastName:'Smith',sport:"Soccer",injury:'Full Activity'},
-            {firstName:'James',lastName:'Jones',sport:"Soccer",injury:'Lower Body Only'},
-            {firstName:'Martha',lastName:'Jones',sport:"Vollyball",injury:'Full Activity'},
-            {firstName:'Peggy',lastName:'Jones',sport:"Vollyball",injury:'Full Activity'}
+            {name:'James Smith',year:'Smith',sport:"Football",injury:'Full Activity'},
+            {name:'Susan Smith',year:'Smith',sport:"Football",injury:'Upper Body Only'},
+            {name:'Jeremy Smith',year:'Smith',sport:"Mens Soccer",injury:'Full Activity'},
+            {name:'Megan Smith',year:'Smith',sport:"Womens Soccer",injury:'Full Activity'},
+            {name:'James Jones',year:'Jones',sport:"Mens Soccer",injury:'Lower Body Only'},
+            {name:'Martha Jones',year:'Jones',sport:"Vollyball",injury:'Full Activity'},
+            {name:'Peggy Jones',year:'Jones',sport:"Vollyball",injury:'Full Activity'}
         ]);
         
         self.headers = [
-            {title:'First Name',sortPropertyName:'firstName', asc: true, active: false},
-            {title:'Last Name',sortPropertyName:'lastName', asc: true, active: false},
+            {title:'Name',sortPropertyName:'name', asc: true, active: false},
+            {title:'Year',sortPropertyName:'year', asc: true, active: false},
             {title:'Sport',sortPropertyName:'sport', asc: true, active: false},
             {title:'Injury',sortPropertyName:'injury', asc: true, active: false}
         ];
         self.filters = [
-            {title:'Show All', filter: null},
-            {title:'Only Vollyball', filter: function(item){return item.sport == 'Vollyball';}},
-            {title:'Only Soccer', filter: function(item){return item.sport == 'Soccer';}},
-            {title:'Only Football', filter: function(item){return item.sport == 'Football';}},
+            {title:'All Sports', filter: null},
+            
+            {title:'Vollyball', filter: function(item){return item.sport == 'Vollyball';}},
+            {title:'Mens Soccer', filter: function(item){return item.sport == 'Mens Soccer';}},
+            {title:'Womens Soccer', filter: function(item){return item.sport == 'Womens Soccer';}},
+            {title:'Football', filter: function(item){return item.sport == 'Football';}}
+            
+        ];
+
+          self.filters1 = [
             {title:'Upper Body Only', filter:function(item){return item.injury == 'Upper Body Only';}},
-            {title:'Lower Body Only', filter:function(item){return item.injury == 'Lower Body Only'}}
+            {title:'Lower Body Only', filter:function(item){return item.injury == 'Lower Body Only'}},
+            {title:'Full Activity', filter:function(item){return item.injury == 'Full Activity'}},
+            {title:'No Activity', filter:function(item){return item.injury == 'No Activity'}}
         ];
         
         self.activeSort = ko.observable(function(){return 0;}); //set the default sort
