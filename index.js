@@ -5,13 +5,13 @@ var pg = require('pg');
 app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 
-// pg.connect(process.env.DATABASE_URL, function(err, client) {
-//   var query = client.query('SELECT * FROM main_table');
+pg.connect(process.env.DATABASE_URL, function(err, client) {
+  var query = client.query('SELECT * FROM users');
 
-//   query.on('row', function(row) {
-//     console.log(JSON.stringify(row));
-//   });
-// });
+  query.on('row', function(row) {
+    console.log(JSON.stringify(row));
+  });
+});
 
 
 app.listen(app.get('port'), function() {
